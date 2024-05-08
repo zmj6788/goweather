@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>主机子域名访问</title>
+</head>
+<body>
+  <h1>server_name</h1>
+  <p>如果你的服务器上要跑很多服务，并且都想使用80端口去访问</p>
+  <p>那就使用域名,通过访问不同的子域名来访问不同的服务</p>
+  <p>因为演示是在内网环境，没有真正的域名可以用</p>
+  <p>所以我们只能修改访问者的hosts文件，将子域名执行到目标服务器上</p>
+  <p>hosts文件位置C:\Windows\System32\drivers\etc</p>
+  <p>修改hosts文件</p>
+  <p>添加服务器地址和子域名</p>
+  <p>172.21.156.211 nginx.study.com</p>
+</body>
+</html>

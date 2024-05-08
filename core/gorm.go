@@ -32,6 +32,7 @@ func Initgorm() *gorm.DB {
 	})
 	if err != nil {
 		global.Log.Fatalf(fmt.Sprintf("[%s] 连接数据库失败", dsn))
+		global.Log.Error("连接数据库失败", err)
 	}
 
 	sqlDB, _ := db.DB()

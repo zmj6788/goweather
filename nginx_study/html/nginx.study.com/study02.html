@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nginx配置认证</title>
+</head>
+
+<body>
+  <h1>nginx配置认证</h1>
+  <p>apt install apache2-utils</p>
+  <p>ubuntu下载工具</p>
+  <p>htpasswd 查验安装成功</p>
+  <p>htpasswd -c /opt/nginx_study/auth/htpasswd test</p>
+  <p>在对应目录下生成htpasswd文件</p>
+  <p>文件内，存放用户名和密码</p>
+  <p>在nginx.conf中应用用户密码文件</p>
+  <div class="code">ok了家人们</div>
+  <script>
+  document.querySelector('.code').innerText = `
+  server {
+
+    server_name nginx.study.com;
+    listen 80;
+  
+    location / {
+    # 开启功能模块，关闭为off
+    auth_basic on;
+    # 指定密码配置文件
+    auth_basic_user_file /opt/nginx_study/auth/htpasswd;
+    root /opt/nginx_study/html/nginx.study.com; # 根目录
+    index index.html; # 默认显示的页面
+  }
+  
+  }`
+  </script>
+</body>
+
+</html>
